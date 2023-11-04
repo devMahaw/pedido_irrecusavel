@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Irrecusável</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Pangolin', cursive;
+        }
+
+        body {
+            background-color: red;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: #fff;
+            margin: auto;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .yes {
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            margin-left: -75px;
+            transition: background-color 0.3s ease;
+        }
+
+        .yes:hover {
+            background-color: rgb(139, 27, 27);
+        }
+
+        .no {
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        h4 {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class = "container">
+            <h1>Quer namorar comigo ?</h1>
+            <img src = "https://i.pinimg.com/originals/fa/49/4e/fa494e85b6099eda29f75fa0ae547e7a.gif" alt = "Ursinho">
+            <h4>(deu trabalho eu mereço &lt;3)</h4>
+            <a href = "https://www.youtube.com/watch?v=izGwDsrQ1eQ" target = "_blank"><button class = "yes">Sim !</button></a>
+            <button onmouseover = "fuja()" onclick = "fuja()" class = "no">Não !</button>
+        </div>
+    </main>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.querySelector(".no")
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+</body>
+</html>
